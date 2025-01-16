@@ -24,6 +24,10 @@ app.get('/notes', (req, res) => {
 app.get('/notes/:id', (req, res) => {
   const id = req.params.id;
   const note = notes.find((n) => n.id === id);
+  app.get('/', (req, res) => {
+    res.send('Hello, World!');
+  });
+  
 
   if (!note) {
     return res.status(404).json({ error: 'Note not found' });
